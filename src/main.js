@@ -3,7 +3,7 @@ import "./style.css";
 const themeIcon = document.querySelectorAll(".themeIcon");
 const cards = document.querySelectorAll(".card");
 const footer = document.getElementById("footer");
-const menuBtn = document.getElementById("menuBtn");
+const icon = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 
 themeIcon.forEach((icon) => {
@@ -18,7 +18,27 @@ themeIcon.forEach((icon) => {
   });
 });
 
-menuBtn.addEventListener("click", () => {
-  menu.classList.toggle("hidden");
-  menu.classList.toggle("translate-x-full");
-});
+function toggleMenu() {
+
+  const isOpen = menu.classList.contains("translate-x-0");
+
+  if (!isOpen) {
+    menu.classList.remove(
+      "translate-x-full",
+      "opacity-0",
+      "pointer-events-none",
+    );
+    menu.classList.add("translate-x-0", "opacity-100");
+
+    document.body.classList.add("overflow-hidden");
+  } else {
+    menu.classList.remove("translate-x-0", "opacity-100");
+    menu.classList.add("translate-x-full", "opacity-0", "pointer-events-none");
+
+    document.body.classList.remove("overflow-hidden");
+  }
+
+  icon.classList.toggle("rotate-90");
+}
+
+menuBtn.addEventListener("click", toggleMenu);

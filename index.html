@@ -60,9 +60,12 @@
           />
         </div>
 
-        <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+        <button id="menuBtn" class="md:hidden text-2xl transition duration-200">☰</button>
       </nav>
-      <div id="menu" class="hidden md:hidden flex-col items-center space-y-4 pb-4 fixed right-0 bg-blue-200 px-8 py-2 transition duration-300 translate-x-full dark:text-white dark:bg-blue-950">
+      <div
+        id="menu"
+        class="md:hidden flex-col items-center space-y-4 pb-4 fixed right-0 bg-blue-200 px-8 py-2 translate-x-full opacity-0 pointer-events-none transition-all duration-300 ease-in-out dark:text-white dark:bg-blue-950"
+      >
         <ul class="flex flex-col gap-2 text-center">
           <li class="font-bold"><a href="index.html">Home</a></li>
           <li class="font-bold"><a href="about.html">About</a></li>
@@ -81,8 +84,14 @@
 
     <main class="px-10">
       <section class="pt-20">
-        <h1 class="text-4xl md:text-5xl md:text-center max-w-250 mx-auto font-bold">
-          We make sure customers find you everywhere from <span class="bg-linear-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">Google to ChatGPT</span>
+        <h1
+          class="text-4xl md:text-5xl md:text-center max-w-250 mx-auto font-bold"
+        >
+          We make sure customers find you everywhere from
+          <span
+            class="bg-linear-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent"
+            >Google to ChatGPT</span
+          >
         </h1>
         <p class="text-lg md:text-xl md:text-center py-5 leading-relaxed">
           We help you show up everywhere customers are searching, swiping,
@@ -95,7 +104,7 @@
         </button>
       </section>
       <section class="pt-20">
-        <h2 class="md:text-center text-3xl mb-20">Services</h2>
+        <h2 class="text-center text-3xl mb-20">Services</h2>
         <div
           class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-0 items-stretch md:justify-items-center"
         >
