@@ -13,3 +13,6 @@ How backdrop filter works in tailwind CSS?
 
 ### Prompt 5:
 I have got every requirement in my project, got 100 score in Lighthouse test and perfect structure according to responsive principles, now I just wanna make it look better. Suggest me color pallette and design changes to it.
+
+### Prompt 6:
+Which is the gold standard, how websites are made faster in professional environment?

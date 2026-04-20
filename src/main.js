@@ -29,7 +29,7 @@ window.addEventListener("load", () => {
       );
       menu.classList.add("translate-y-15", "opacity-100");
 
-      document.body.classList.add("overflow-hidden");
+      // document.body.classList.add("overflow-hidden");
     } else {
       menu.classList.remove("translate-y-15", "opacity-100");
       menu.classList.add(
@@ -38,7 +38,7 @@ window.addEventListener("load", () => {
         "pointer-events-none",
       );
 
-      document.body.classList.remove("overflow-hidden");
+      // document.body.classList.remove("overflow-hidden");
     }
 
     icon.classList.toggle("rotate-90");

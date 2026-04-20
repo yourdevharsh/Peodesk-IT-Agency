@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prodesk-it-agency.vercel.app/sitemap.xml
