@@ -16,3 +16,6 @@ I have got every requirement in my project, got 100 score in Lighthouse test and
 
 ### Prompt 6:
 Which is the gold standard, how websites are made faster in professional environment?
+
+### Prompt 7:
+How IntersectonObserver works in JS and what are its properties?

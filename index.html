@@ -7,13 +7,20 @@
       name="description"
       content="We're an end-to-end global digital marketing agency built by marketers, for marketers."
     />
+    <meta property="og:title" content="Prodesk IT - Digital Marketing Agency" />
+    <meta
+      property="og:description"
+      content="We're an end-to-end global digital marketing agency built by marketers, for marketers."
+    />
+    <meta property="og:image" content="/src/assets/logo.svg" />
+    <meta property="og:url" content="https://prodesk-it-agency.vercel.app/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
 
     <title>Prodesk IT - Digital Marketing Agency you need!</title>
   </head>
 
   <body
-    class="bg-slate-50 text-slate-600 dark:text-slate-400 dark:bg-slate-950 overflow-x-hidden transform duration-300"
+    class="bg-slate-50 text-slate-600 dark:text-slate-400 dark:bg-slate-950 overflow-x-hidden transition duration-300"
   >
     <!-- HEADER SECTION -->
     <header
@@ -21,7 +28,10 @@
     >
       <nav class="flex justify-between items-center py-3">
         <!-- LOGO -->
-        <a class="flex items-center justify-center gap-1.5" href="index.html"
+        <a
+          aria-label="Website Logo"
+          class="flex items-center justify-center gap-1.5"
+          href="index.html"
           ><img
             class="hover:scale-105 transition duration-150"
             src="/src/assets/logo.svg"
@@ -37,22 +47,22 @@
             <li
               class="font-bold hover:scale-110 transition duration-200 ease-in"
             >
-              <a href="index.html">Home</a>
+              <a class="navA p-0.5" href="#home">Home</a>
             </li>
             <li
               class="font-bold hover:scale-110 transition duration-200 ease-in"
             >
-              <a href="about.html">About</a>
+              <a class="navA p-0.5" href="#service">Service</a>
             </li>
             <li
               class="font-bold hover:scale-110 transition duration-200 ease-in"
             >
-              <a href="service.html">Service</a>
+              <a class="navA p-0.5" href="#contact">Contact</a>
             </li>
             <li
               class="font-bold hover:scale-110 transition duration-200 ease-in"
             >
-              <a href="contact.html">Contact</a>
+              <a class="navA p-0.5" href="#about">About</a>
             </li>
           </ul>
           <img
@@ -60,11 +70,16 @@
             alt="Theme Change Icon"
             width="20"
             height="20"
+            aria-label="Toggle Theme"
             class="themeIcon hover:scale-110 hover:rotate-360 transition duration-150"
           />
         </div>
 
-        <button id="menuBtn" class="md:hidden text-2xl transition duration-200">
+        <button
+          id="menuBtn"
+          aria-label="Toggle Menu"
+          class="md:hidden text-2xl transition duration-200"
+        >
           ☰
         </button>
       </nav>
@@ -75,10 +90,10 @@
         class="md:hidden fixed top-0 right-0 bg-blue-200 px-8 py-4 -translate-y-full opacity-0 pointer-events-none transition-all duration-300 ease-in-out dark:text-white dark:bg-blue-950 shadow-2xl shadow-slate-900 rounded-2xl"
       >
         <ul class="flex flex-col gap-5 text-center">
-          <li class="font-bold border-b"><a href="index.html">Home</a></li>
-          <li class="font-bold border-b"><a href="about.html">About</a></li>
-          <li class="font-bold border-b"><a href="service.html">Service</a></li>
-          <li class="font-bold border-b"><a href="contact.html">Contact</a></li>
+          <li class="font-bold border-b"><a href="#home">Home</a></li>
+          <li class="font-bold border-b"><a href="#service">Service</a></li>
+          <li class="font-bold border-b"><a href="#contact">Contact</a></li>
+          <li class="font-bold border-b"><a href="#about">About</a></li>
         </ul>
         <img
           src="/sun.svg"
@@ -92,7 +107,8 @@
 
     <!-- MAIN SECTION -->
     <main class="px-10">
-      <section class="pt-20">
+      <!-- HOME SECTION -->
+      <section id="home" class="pt-20">
         <h1
           class="text-4xl md:text-5xl md:text-center max-w-250 mx-auto font-bold"
         >
@@ -113,9 +129,9 @@
         </button>
       </section>
 
-      <!-- SERVICES SECTION -->
-      <section class="pt-20">
-        <h2 class="text-center text-3xl mb-20">Services</h2>
+      <!-- SERVICE SECTION -->
+      <section id="service" class="pt-20">
+        <h2 class="text-center text-3xl mb-20 font-bold underline">Service</h2>
         <div
           class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-0 items-stretch justify-items-center"
         >
@@ -133,30 +149,31 @@
               <p
                 class="text-xs text-blue-700 dark:text-blue-300 mb-1 font-bold"
               >
-                Lorem
+                ENGINEERING
               </p>
               <p class="text-xl font-extrabold mb-2 line-clamp-2">
-                Web Development
+                Web & App Development
               </p>
               <p
                 class="text-gray-600 dark:text-gray-300 text-md mt-3 px-7 text-justify md:text-center"
               >
-                Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae
-                temporibus omnis illum maxime quod deserunt eligendi dolor
+                We build fast, responsive, and secure websites tailored to your
+                brand. Delivering seamless UI/UX experiences that convert
+                visitors into loyal customers across all devices.
               </p>
             </div>
             <div class="flex text-white text-center">
               <div class="flex-1 bg-blue-600 py-5">
-                <p class="font-bold">4m</p>
-                <p class="text-xs">READ</p>
+                <p class="font-bold">99%</p>
+                <p class="text-xs">UPTIME</p>
               </div>
               <div class="flex-1 bg-blue-700 py-5 border-x border-blue-500">
-                <p class="font-bold">5123</p>
-                <p class="text-xs">VIEWS</p>
+                <p class="font-bold">&lt; 2s</p>
+                <p class="text-xs">LOAD TIME</p>
               </div>
               <div class="flex-1 bg-blue-600 py-5">
-                <p class="font-bold">32</p>
-                <p class="text-xs">COMMENTS</p>
+                <p class="font-bold">100%</p>
+                <p class="text-xs">RESPONSIVE</p>
               </div>
             </div>
           </div>
@@ -175,7 +192,7 @@
               <p
                 class="text-xs text-blue-700 dark:text-blue-300 mb-1 font-bold"
               >
-                Lorem
+                ORGANIC GROWTH
               </p>
               <p class="text-xl font-extrabold mb-2 line-clamp-2">
                 Search Engine Optimization
@@ -183,22 +200,23 @@
               <p
                 class="text-gray-500 dark:text-gray-300 text-md mt-3 px-7 text-justify md:text-center"
               >
-                Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae
-                temporibus omnis illum maxime quod deserunt eligendi dolor
+                Dominate search results and drive high-intent organic traffic to
+                your website. We use data-driven on-page, off-page, and
+                technical strategies to outrank your competitors.
               </p>
             </div>
             <div class="flex text-white text-center">
               <div class="flex-1 bg-blue-600 py-5">
-                <p class="font-bold">4m</p>
-                <p class="text-xs">READ</p>
+                <p class="font-bold">Top 3</p>
+                <p class="text-xs">RANKINGS</p>
               </div>
               <div class="flex-1 bg-blue-700 py-5 border-x border-blue-500">
-                <p class="font-bold">5123</p>
-                <p class="text-xs">VIEWS</p>
+                <p class="font-bold">+200%</p>
+                <p class="text-xs">TRAFFIC</p>
               </div>
               <div class="flex-1 bg-blue-600 py-5">
-                <p class="font-bold">32</p>
-                <p class="text-xs">COMMENTS</p>
+                <p class="font-bold">White</p>
+                <p class="text-xs">HAT SEO</p>
               </div>
             </div>
           </div>
@@ -216,32 +234,180 @@
               <p
                 class="text-xs text-blue-700 dark:text-blue-300 mb-1 font-bold"
               >
-                Lorem
+                PERFORMANCE
               </p>
               <p class="text-xl font-extrabold mb-2 line-clamp-2">
-                Digital Marketing
+                Paid Media & Social
               </p>
               <p
                 class="text-gray-500 dark:text-gray-300 text-md mt-3 px-7 text-justify md:text-center"
               >
-                Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae
-                temporibus omnis illum maxime quod deserunt eligendi dolor
+                Maximize your ROI with laser-targeted ad campaigns and engaging
+                social strategies. We turn casual scrollers into paying
+                customers through highly optimized sales funnels.
               </p>
             </div>
             <div class="flex text-white text-center">
               <div class="flex-1 bg-blue-600 py-5">
-                <p class="font-bold">4m</p>
-                <p class="text-xs">READ</p>
+                <p class="font-bold">5X</p>
+                <p class="text-xs">AVG ROI</p>
               </div>
               <div class="flex-1 bg-blue-700 py-5 border-x border-blue-500">
-                <p class="font-bold">5123</p>
-                <p class="text-xs">VIEWS</p>
+                <p class="font-bold">-30%</p>
+                <p class="text-xs">CPA COST</p>
               </div>
               <div class="flex-1 bg-blue-600 py-5">
-                <p class="font-bold">32</p>
-                <p class="text-xs">COMMENTS</p>
+                <p class="font-bold">10k+</p>
+                <p class="text-xs">LEADS</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="pt-20">
+        <h2 class="text-center text-3xl mb-20 font-bold underline">Contact</h2>
+        <div
+          class="flex flex-wrap gap-12 justify-evenly rounded-3xl p-8 bg-slate-200 dark:bg-slate-800 dark:text-white md:max-w-[90%] lg:max-w-[80%] m-auto"
+        >
+          <!-- INFORMATION SECTION -->
+          <div class="flex-1 md:min-w-75 flex flex-col gap-14">
+            <h4 class="font-bold text-2xl">Information</h4>
+            <div class="flex flex-col h-full gap-14">
+              <div class="space-y-11">
+                <div>
+                  <label
+                    class="block text-xs font-bold uppercase tracking-widest text-indigo-500 mb-1"
+                    >Office Address</label
+                  >
+                  <p class="text-gray-700 dark:text-slate-300 leading-relaxed">
+                    JA-47D, Hari Nagar New Delhi,<br />
+                    Delhi, India
+                  </p>
+                </div>
+
+                <div>
+                  <label
+                    class="block text-xs font-bold uppercase tracking-widest text-indigo-500 mb-1"
+                    >CEO & Founder</label
+                  >
+                  <p class="text-gray-700 font-medium dark:text-slate-300">
+                    JShobhana V P Jonathan
+                  </p>
+                </div>
+
+                <div>
+                  <label
+                    class="block text-xs font-bold uppercase tracking-widest text-indigo-500 mb-1"
+                    >Email Address</label
+                  >
+                  <a
+                    href="mailto:contact.agency@prodeskit.com"
+                    class="text-gray-700 hover:text-indigo-600 dark:hover:text-indigo-300 transition duration-200 dark:text-slate-300"
+                  >
+                    contact.agency@prodeskit.com
+                  </a>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100">
+                  <label
+                    class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-3"
+                    >Availability</label
+                  >
+                  <div class="flex flex-col gap-2 text-sm">
+                    <div class="flex justify-between">
+                      <span class="text-gray-500 dark:text-slate-300"
+                        >Mon – Fri</span
+                      >
+                      <span
+                        class="font-semibold text-gray-800 dark:text-slate-300"
+                        >9:00 AM – 6:00 PM</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-gray-500 dark:text-slate-300"
+                        >Support (Sat)</span
+                      >
+                      <span
+                        class="font-semibold text-gray-800 dark:text-slate-300"
+                        >10:00 AM – 2:00 PM</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-indigo-50 p-4 rounded-xl border-l-4 border-indigo-400"
+                >
+                  <p class="text-sm text-indigo-800 leading-snug">
+                    <span class="font-bold">Response Promise:</span> We
+                    typically respond to all enquiries within 24 hours.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ENQUIRE SECTION -->
+          <div class="flex flex-col flex-1 gap-12 md:min-w-96">
+            <h4 class="font-bold text-2xl">Enquire</h4>
+            <form class="flex flex-col gap-8 w-full">
+              <div class="flex flex-col gap-2.5">
+                <label for="fullName" class="font-semibold">Name</label>
+                <input
+                  class="border-gray-200 border bg-gray-100 px-2 py-1.5 rounded-md font-semibold outline-0 focus:shadow-md focus:shadow-indigo-400 focus:ring-2 focus:ring-indigo-200 transition duration-200 dark:text-black dark:focus:shadow-lg"
+                  type="text"
+                  name="fullName"
+                  id="fullName"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="flex flex-col gap-2.5">
+                <label for="userEmail" class="font-semibold">Email</label>
+                <input
+                  class="border-gray-200 border bg-gray-100 px-2 py-1.5 rounded-md font-semibold outline-0 focus:shadow-md focus:shadow-indigo-400 focus:ring-2 focus:ring-indigo-200 transition duration-200 dark:text-black dark:focus:shadow-lg"
+                  type="email"
+                  name="userEmail"
+                  id="userEmail"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="flex flex-col gap-2.5">
+                <label for="userPhone" class="font-semibold">Phone</label>
+                <input
+                  class="border-gray-200 border bg-gray-100 px-2 py-1.5 rounded-md font-semibold outline-0 focus:shadow-md focus:shadow-indigo-400 focus:ring-2 focus:ring-indigo-200 transition duration-200 dark:text-black dark:focus:shadow-lg"
+                  type="tel"
+                  maxlength="13"
+                  name="userPhone"
+                  id="userPhone"
+                  placeholder="Your Phone"
+                />
+              </div>
+              <div class="flex flex-col gap-2.5">
+                <label for="userEnquiry" class="font-semibold"
+                  >Your Enquiry</label
+                >
+                <textarea
+                  class="border-gray-200 border bg-gray-100 px-2 py-1.5 rounded-md font-semibold outline-0 focus:shadow-md focus:shadow-indigo-400 focus:ring-2 focus:ring-indigo-200 transition duration-200 dark:text-black dark:focus:shadow-lg"
+                  name="yourEnqiry"
+                  id="yourEnqiry"
+                  placeholder="Tell us about your requirement..."
+                  required
+                  rows="5"
+                ></textarea>
+              </div>
+              <div class="flex justify-center">
+                <button
+                  class="text-white bg-indigo-500 px-4 py-3 rounded-lg font-bold outline-0 hover:bg-blue-700 hover:shadow-lg hover:shadow-black active:shadow-neutral-200 transition duration-200 hover:scale-105 dark:hover:shadow-indigo-300 dark:hover:shadow-md dark:active:shadow-neutral-900"
+                  type="submit"
+                >
+                  Send Enquiry
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </section>
@@ -252,56 +418,151 @@
       id="footer"
       class="mt-15 px-5 py-7 text-slate-200 bg-slate-900 border-t border-amber-50"
     >
+      <!-- ABOUT SECTION -->
+      <section id="about" class="pt-10 pb-20">
+        <h2 class="text-center text-3xl mb-16 font-bold underline">About Us</h2>
+
+        <div
+          class="flex flex-col md:flex-row gap-12 items-center bg-white dark:bg-slate-800 rounded-3xl p-6 md:p-10 shadow-lg shadow-slate-200 dark:shadow-slate-900 md:max-w-[85%] mx-auto transition duration-300"
+        >
+          <div class="flex-1 space-y-6">
+            <h3
+              class="text-2xl md:text-3xl font-bold text-slate-800 dark:text-white leading-snug"
+            >
+              Driven by Data, <br />
+              <span
+                class="bg-linear-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent"
+                >Powered by Creativity</span
+              >
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-300 leading-relaxed text-justify md:text-left"
+            >
+              At Prodesk IT, we don't just run campaigns; we build digital
+              experiences that drive real growth. Built by marketers, for
+              marketers, our mission is to simplify the complex digital
+              landscape so you can focus on what matters most—scaling your
+              business.
+            </p>
+          </div>
+
+          <div class="flex-1 w-full grid grid-cols-2 gap-4">
+            <div
+              class="bg-indigo-50 dark:bg-slate-700 p-5 rounded-2xl text-center border-b-4 border-indigo-500 hover:-translate-y-1 transition duration-200"
+            >
+              <p
+                class="text-3xl font-extrabold text-indigo-600 dark:text-indigo-400"
+              >
+                150+
+              </p>
+              <p
+                class="text-xs font-bold tracking-wider uppercase text-slate-500 dark:text-slate-300 mt-2"
+              >
+                Projects
+              </p>
+            </div>
+
+            <div
+              class="bg-indigo-50 dark:bg-slate-700 p-5 rounded-2xl text-center border-b-4 border-purple-500 hover:-translate-y-1 transition duration-200"
+            >
+              <p
+                class="text-3xl font-extrabold text-purple-600 dark:text-purple-400"
+              >
+                98%
+              </p>
+              <p
+                class="text-xs font-bold tracking-wider uppercase text-slate-500 dark:text-slate-300 mt-2"
+              >
+                Retention
+              </p>
+            </div>
+
+            <div
+              class="bg-indigo-50 dark:bg-slate-700 p-5 rounded-2xl text-center border-b-4 border-blue-500 hover:-translate-y-1 transition duration-200"
+            >
+              <p
+                class="text-3xl font-extrabold text-blue-600 dark:text-blue-400"
+              >
+                50+
+              </p>
+              <p
+                class="text-xs font-bold tracking-wider uppercase text-slate-500 dark:text-slate-300 mt-2"
+              >
+                Brands
+              </p>
+            </div>
+
+            <div
+              class="bg-indigo-50 dark:bg-slate-700 p-5 rounded-2xl text-center border-b-4 border-sky-500 hover:-translate-y-1 transition duration-200"
+            >
+              <p class="text-3xl font-extrabold text-sky-600 dark:text-sky-400">
+                24/7
+              </p>
+              <p
+                class="text-xs font-bold tracking-wider uppercase text-slate-500 dark:text-slate-300 mt-2"
+              >
+                Support
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- SOCIAL MEDIA ICONS -->
       <div
         class="flex justify-around max-w-80 mx-auto bg-white py-2 rounded-full"
       >
         <div class="p-1.5 flex justify-center">
-          <a href="">
+          <a href="#">
             <img
               src="/src/assets/instagram.svg"
-              alt="Facebook Logo"
+              alt="Instagram Logo"
               width="30"
               height="30"
+              aria-label="Redirect to Instagram"
               class="transition duration-250 ease-in hover:rotate-y-360 hover:scale-110"
             />
           </a>
         </div>
 
         <div class="p-1.5 flex justify-center">
-          <a href="">
+          <a href="#">
             <img
               src="/src/assets/facebook.svg"
               alt="Facebook Logo"
               width="30"
               height="30"
+              aria-label="Redirect to Facebook"
               class="transition duration-250 ease-in hover:rotate-y-360 hover:scale-110"
             />
           </a>
         </div>
         <div class="p-1.5 flex justify-center">
-          <a href="">
+          <a href="#">
             <img
               src="/src/assets/twitter.svg"
-              alt="Facebook Logo"
+              alt="Twitter Logo"
               width="27"
               height="27"
+              aria-label="Redirect to Twitter"
               class="transition duration-250 ease-in hover:rotate-y-360 hover:scale-110"
             />
           </a>
         </div>
         <div class="p-1.5 flex justify-center">
-          <a href="">
+          <a href="#">
             <img
               src="/src/assets/youtube.svg"
-              alt="Facebook Logo"
+              alt="YouTube Logo"
               width="30"
               height="30"
+              aria-label="Redirect to YouTube"
               class="transition duration-250 ease-in hover:rotate-y-360 hover:scale-110"
             />
           </a>
         </div>
       </div>
+
       <!-- COPYRIGHT SECTION -->
       <div class="text-center mt-10">
         <p>Copyright &copy; <span class="todayDate"></span> Prodesk IT</p>

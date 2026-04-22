@@ -37,6 +37,64 @@ window.addEventListener("load", () => {
     applyTheme(e.matches);
   });
 
+  // NAV LINKS AND SECTIONS SELECTION
+  const navAs = document.querySelectorAll(".navA");
+  const targetSections = ["#home", "#about", "#service", "#contact"];
+
+  const trackedEls = targetSections
+    .map((id) => document.querySelector(id))
+    .filter((el) => el !== null);
+
+  let currentIntersectingId = "home";
+
+  // OBSERVER FOR CHECKING CURRENT SECTION VISIBLE ON SCREEN
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          currentIntersectingId = entry.target.id;
+          if (!isAtBottom()) {
+            showUnderline(currentIntersectingId);
+          }
+        }
+      });
+    },
+    {
+      rootMargin: "-25% 0px -75% 0px",
+      threshold: 0,
+    },
+  );
+
+  trackedEls.forEach((el) => observer.observe(el));
+
+  // CHECK IF WE ARE AT BOTTOM
+  function isAtBottom() {
+    return (
+      Math.ceil(window.innerHeight + window.scrollY) >=
+      document.documentElement.scrollHeight
+    );
+  }
+
+  // SCROLL EVENT LISTENER
+  window.addEventListener("scroll", () => {
+    if (isAtBottom()) {
+      showUnderline("about");
+    } else {
+      showUnderline(currentIntersectingId);
+    }
+  });
+
+  // FUNCTION TO SHOW UNDERLINE
+  function showUnderline(id) {
+    navAs.forEach((navA) => {
+      if (navA.href.includes(id)) {
+        navA.style.borderBottom = "2px solid gray";
+      } else {
+        navA.style.borderBottom = "none";
+      }
+    });
+  }
+
   // FUNCTION TO CLOSE MENU
   const closeMenu = () => {
     menu.classList.remove("translate-y-15", "opacity-100");
@@ -62,7 +120,7 @@ window.addEventListener("load", () => {
     isOpen ? closeMenu() : openMenu();
   }
 
-  // LISTENER TO CLOSE MENU ON TOUCH OTHER THAN NAVBAR
+  // LISTENER TO CLOSE MENU ON TOUCH AND CLICK OTHER THAN NAVBAR
   document.addEventListener("touchstart", (event) => {
     const isClickInsideMenu = menu.contains(event.target);
     const isClickOnButton = menuBtn.contains(event.target);
@@ -71,6 +129,21 @@ window.addEventListener("load", () => {
     if (isOpen && !isClickInsideMenu && !isClickOnButton) {
       closeMenu();
     }
+  });
+
+  document.addEventListener("click", (event) => {
+    const isClickInsideMenu = menu.contains(event.target);
+    const isClickOnButton = menuBtn.contains(event.target);
+    const isOpen = menu.classList.contains("translate-y-15");
+
+    if (isOpen && !isClickInsideMenu && !isClickOnButton) {
+      closeMenu();
+    }
+  });
+
+  // LISTENER TO CLOSE ON TOUCH ON ANY LINK
+  document.querySelectorAll("#menu a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
   });
 
   menu.classList.add("transition-all", "duration-300", "ease-in-out");
