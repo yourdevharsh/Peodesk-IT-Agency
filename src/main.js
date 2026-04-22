@@ -1,51 +1,79 @@
 import "./style.css";
 
 window.addEventListener("load", () => {
-  const themeIcon = document.querySelectorAll(".themeIcon");
-  const cards = document.querySelectorAll(".card");
-  const footer = document.getElementById("footer");
-  const icon = document.getElementById("menuBtn");
+  // ELEMENTS SELECTION
+  const themeIcons = document.querySelectorAll(".themeIcon");
+  const htmlElement = document.documentElement;
+  const menuBtn = document.getElementById("menuBtn");
   const menu = document.getElementById("menu");
 
-  themeIcon.forEach((icon) => {
+  // FUNCTION FOR APPLYING THEME
+  const applyTheme = (isDark) => {
+    if (isDark) {
+      htmlElement.classList.add("dark");
+      themeIcons.forEach((img) => (img.src = "/moon.svg"));
+    } else {
+      htmlElement.classList.remove("dark");
+      themeIcons.forEach((img) => (img.src = "/sun.svg"));
+    }
+  };
+
+  // CHECK FOR USER'S PREFERENCE
+  const systemSetting = window.matchMedia("(prefers-color-scheme: dark)");
+
+  // SET INITIAL THEME
+  applyTheme(systemSetting.matches);
+
+  // TOGGLE THEME HANDLING
+  themeIcons.forEach((icon) => {
     icon.addEventListener("click", () => {
-      if (icon.src.includes("sun.svg")) {
-        icon.src = "/moon.svg";
-      } else {
-        icon.src = "/sun.svg";
-      }
-      document.documentElement.classList.toggle("dark");
+      const isCurrentlyDark = htmlElement.classList.contains("dark");
+      applyTheme(!isCurrentlyDark);
     });
   });
 
-  function toggleMenu() {
+  // UPDATE IF USER CHANGE PREFERENCE
+  systemSetting.addEventListener("change", (e) => {
+    applyTheme(e.matches);
+  });
+
+  // FUNCTION TO CLOSE MENU
+  const closeMenu = () => {
+    menu.classList.remove("translate-y-15", "opacity-100");
+    menu.classList.add("-translate-y-full", "opacity-0", "pointer-events-none");
+    menuBtn.classList.remove("rotate-90");
+  };
+
+  // FUNCTION TO OPEN MENU
+  const openMenu = () => {
+    menu.classList.remove(
+      "-translate-y-full",
+      "opacity-0",
+      "pointer-events-none",
+    );
+    menu.classList.add("translate-y-15", "opacity-100");
+    menuBtn.classList.add("rotate-90");
+  };
+
+  // MAIN TOGGLE FUNCTION FOR MENU
+  function toggleMenu(e) {
+    e.stopPropagation();
+    const isOpen = menu.classList.contains("translate-y-15");
+    isOpen ? closeMenu() : openMenu();
+  }
+
+  // LISTENER TO CLOSE MENU ON TOUCH OTHER THAN NAVBAR
+  document.addEventListener("touchstart", (event) => {
+    const isClickInsideMenu = menu.contains(event.target);
+    const isClickOnButton = menuBtn.contains(event.target);
     const isOpen = menu.classList.contains("translate-y-15");
 
-    if (!isOpen) {
-      menu.classList.remove(
-        "-translate-y-full",
-        "opacity-0",
-        "pointer-events-none",
-      );
-      menu.classList.add("translate-y-15", "opacity-100");
-
-      // document.body.classList.add("overflow-hidden");
-    } else {
-      menu.classList.remove("translate-y-15", "opacity-100");
-      menu.classList.add(
-        "-translate-y-full",
-        "opacity-0",
-        "pointer-events-none",
-      );
-
-      // document.body.classList.remove("overflow-hidden");
+    if (isOpen && !isClickInsideMenu && !isClickOnButton) {
+      closeMenu();
     }
+  });
 
-    icon.classList.toggle("rotate-90");
-  }
-  
-  menu.classList.remove("transition-none");
   menu.classList.add("transition-all", "duration-300", "ease-in-out");
 
-  icon.addEventListener("click", toggleMenu);
+  menuBtn.addEventListener("click", toggleMenu);
 });
