@@ -20,5 +20,8 @@ Which is the gold standard, how websites are made faster in professional environ
 ### Prompt 7:
 How IntersectonObserver works in JS and what are its properties?
 
+### Prompt 8:
+Have I completed all requirements in my project?
+
 ### Other Prompts:
 Tailwind property to do {Certain thing}.
